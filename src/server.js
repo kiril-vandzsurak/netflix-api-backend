@@ -7,7 +7,6 @@ const port = process.env.PORT;
 server.use(express.json());
 
 server.use("/media", mediaRouter);
-console.log(import.meta.url);
 
 server.listen(port, () => {
   console.table(listEndpoints(server));
