@@ -11,9 +11,18 @@ const movieJSONPath = join(
   "../../data/movie.json"
 );
 
-mediaRouter.get("/", (req, res, next) => {
+mediaRouter.get("/", (req, res) => {
   const fileContent = fs.readFileSync(movieJSONPath);
   const movies = JSON.parse(fileContent);
   res.send(movies);
 });
+
+mediaRouter.post("/", (req, res) => {
+  const newMovie = { ...req.body, createdAt: new Date(), imdbID: uniqid() };
+  const movieArr = JSON.parse(fs.readFileSync(movieJSONPath));
+  movieArr.push(newMovie);
+  fs.writeFileSync(movieJSONPath, JSON.stringify(movieArr));
+  res.status(201).send({ id: newMovie.id });
+});
+
 export default mediaRouter;
