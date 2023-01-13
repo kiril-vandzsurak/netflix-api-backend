@@ -42,8 +42,6 @@ mediaRouter.get("/:id/pdf", (req, res, next) => {
     const index = allMovies.findIndex(
       (singleMovie) => singleMovie.imdbID === req.params.id
     );
-    // const oldMovies = allMovies[index];
-    // const updatedMovies = { ...oldMovies, ...req.body, updatedAt: new Date() };
     const source = getPdfReadStream(index);
     const destination = res;
     pipeline(source, destination, (err) => {
