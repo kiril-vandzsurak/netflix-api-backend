@@ -18,8 +18,9 @@
     "title": "Terminator",
     "year": "2005",
     "type": "military",
-    "poster": "https://m.media-amazon.com/images/M/MV5BMTM5MzcwOTg4MF5BMl5BanBnXkFtZTgwOTQwMzQxMDE@._V1_SX300.jpg",
+    "poster": "new poster",
     "createdAt": "2023-01-13T09:32:37.678Z",
-    "id": "8oj2t3b4lcubmrvz"
+    "id": "8oj2t3b4lcubmrvz",
+    "updatedAt": "2023-01-13T15:42:41.124Z"
   }
 ]

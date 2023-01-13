@@ -27,13 +27,17 @@ mediaRouter.post("/", (req, res) => {
   res.status(201).send({ id: newMovie.id });
 });
 
-// mediaRouter.post("/:id/poster", (req, res) => {
-//   const newMovie = { ...req.body};
-//   const movieArr = JSON.parse(fs.readFileSync(movieJSONPath));
-//   movieArr.push(newMovie);
-//   fs.writeFileSync(movieJSONPath, JSON.stringify(movieArr));
-//   res.status(201).send({ id: newMovie.id });
-// });
+mediaRouter.post("/:id/poster", (req, res) => {
+  const allMovies = JSON.parse(fs.readFileSync(movieJSONPath));
+  const index = allMovies.findIndex(
+    (singleMovie) => singleMovie.id === req.params.id
+  );
+  const oldMovies = allMovies[index];
+  const updatedMovies = { ...oldMovies, ...req.body, updatedAt: new Date() };
+  allMovies[index] = updatedMovies;
+  fs.writeFileSync(movieJSONPath, JSON.stringify(allMovies));
+  res.send(updatedMovies);
+});
 
 mediaRouter.get("/:id/pdf", (req, res, next) => {
   try {
