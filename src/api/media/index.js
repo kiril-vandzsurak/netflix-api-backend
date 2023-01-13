@@ -40,9 +40,10 @@ mediaRouter.get("/:id/pdf", (req, res, next) => {
     res.setHeader("Content-Disposition", "attachment; filename=myFile.pdf");
     const allMovies = JSON.parse(fs.readFileSync(movieJSONPath));
     const index = allMovies.findIndex(
-      (singleMovie) => singleMovie.imdbID === req.params.id
+      (singleMovie) => singleMovie.id === req.params.id
     );
-    const source = getPdfReadStream(index);
+    console.log("INDEX::::::", allMovies[index]);
+    const source = getPdfReadStream(allMovies[index]);
     const destination = res;
     pipeline(source, destination, (err) => {
       if (err) console.log(err);
