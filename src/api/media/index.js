@@ -43,7 +43,9 @@ mediaRouter.get("/:id/pdf", (req, res, next) => {
       (singleMovie) => singleMovie.id === req.params.id
     );
     console.log("INDEX::::::", allMovies[index]);
+    console.log("ELEMENT::::::", allMovies[index].title);
     const source = getPdfReadStream(allMovies[index]);
+    console.log("SOURCE::::::", source);
     const destination = res;
     pipeline(source, destination, (err) => {
       if (err) console.log(err);

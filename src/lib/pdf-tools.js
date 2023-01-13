@@ -9,22 +9,17 @@ export const getPdfReadStream = (movies) => {
 
   const printer = new PdfPrinter(fonts);
 
-  // const content = movies.map((movie) => {
-  //   return [
-  //     { text: movie.title, style: "header" },
-  //     { text: movie.year, style: "subheader" },
-  //     { text: movie.type, style: "subheader" },
-  //     "\n\n",
-  //   ];
-  // });
-
   console.log(movies);
 
   const docDefinition = {
     content: [
       {
         text: movies.title,
+      },
+      {
         text: movies.year,
+      },
+      {
         text: movies.type,
       },
     ],
