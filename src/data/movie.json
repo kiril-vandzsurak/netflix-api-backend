@@ -18,9 +18,17 @@
     "title": "Terminator",
     "year": "2005",
     "type": "military",
-    "poster": "url",
+    "poster": "terminator",
     "createdAt": "2023-01-13T09:32:37.678Z",
     "id": "8oj2t3b4lcubmrvz",
-    "updatedAt": "2023-01-13T16:07:27.645Z"
+    "updatedAt": "2023-01-14T02:42:32.928Z"
+  },
+  {
+    "title": "Sexify",
+    "year": "2023",
+    "type": "movie",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTM5MzcwOTg4MF5BMl5BanBnXkFtZTgwOTQwMzQxMDE@._V1_SX300.jpg",
+    "createdAt": "2023-01-14T02:40:53.254Z",
+    "id": "8oj2t454lcvcd4hz"
   }
 ]

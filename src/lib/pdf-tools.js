@@ -9,8 +9,6 @@ export const getPdfReadStream = (movies) => {
 
   const printer = new PdfPrinter(fonts);
 
-  console.log(movies);
-
   const docDefinition = {
     content: [
       {

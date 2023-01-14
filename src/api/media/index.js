@@ -20,7 +20,7 @@ mediaRouter.get("/", (req, res) => {
 });
 
 mediaRouter.post("/", (req, res) => {
-  const newMovie = { ...req.body, createdAt: new Date(), imdbID: uniqid() };
+  const newMovie = { ...req.body, createdAt: new Date(), id: uniqid() };
   const movieArr = JSON.parse(fs.readFileSync(movieJSONPath));
   movieArr.push(newMovie);
   fs.writeFileSync(movieJSONPath, JSON.stringify(movieArr));
